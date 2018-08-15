@@ -55,12 +55,16 @@ if [ $1 = "--movie" ] || [ $1 = "-m" ]; then
 fi
 
 #make screenshot, crop it and echo aOK sign 
-mkdir $lapse_dir
+mkdir $lapse_dir &> /dev/null
+if [ "$?" -gt 0 ]; then
+	count=$(cat "$lapse_dir/.last_count")
+fi
 while [ true ] ; do
 	file=$lapse_dir/$count.png
 	echo -n $count
 	magick import -silent -window root -crop $crop_width\x$crop_heigth+$crop_offsetx+$crop_offsety $file
 	count=$(($count+1))
 	echo -e "\t${greenbold}OK${normalnc}"
+	echo $count > $lapse_dir/.last_count
 	sleep $2 & spinner
 done

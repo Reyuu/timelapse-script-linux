@@ -1,6 +1,8 @@
 # Simple timelapse tool
 ![preview](https://my.mixtape.moe/kintix.gif)
 
+**Resuming your timelapses is supported!**
+
 ## Requirements
  - imagemagick
  - bash (or anything inbetween)
