@@ -1,4 +1,6 @@
 # Simple timelapse tool
+![preview](https://my.mixtape.moe/kintix.gif)
+
 ## Requirements
  - imagemagick
  - bash (or anything inbetween)
@@ -15,14 +17,21 @@
 
 ### Examples
 Display script help:
+
 `./tscrot.sh -h`
+
 or
+
 `./tscrot.sh --help`
 
 Save timelapse to **mytimelapse** and set time between captures to **30**:
+
 `./tscrot.sh mytimelapse 30`
 
 Stich **mytimelapse** with framerate of **20** frames per second:
+
 `./tscrot.sh -m mytimelapse 20`
+
 or
+
 `./tscrot.sh --movie mytimelapse 20`
