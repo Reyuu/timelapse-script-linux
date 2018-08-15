@@ -48,7 +48,7 @@ fi
 #-m --movie
 #-m [folder] [framerate]
 if [ $1 = "--movie" ] || [ $1 = "-m" ]; then
-	ffmpeg -loglevel panic -y -r $3 -pattern_type glob -i "$2/*.png" -c:v libx264 out.mp4 > /dev/null &
+	ffmpeg -loglevel panic -y -r $3 -i "$2/%d.png" -c:v libx264 out.mp4 > /dev/null &
 	spinner
 	echo -e "${greenbold}OK${normalnc} as out.mp4"
 	exit 1
